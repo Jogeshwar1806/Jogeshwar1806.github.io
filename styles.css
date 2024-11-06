@@ -109,6 +109,20 @@ nav {
     border-radius: 5px;
 }
 
+.aboutme{
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+
+}
+
+.aboutme-h3{
+    margin-left: 1rem;
+}
+
+.aboutme-ul{
+    margin-left: 4rem;
+}
+
 /* Container */
 .container {
     max-width: 1000px;
@@ -173,4 +187,43 @@ input, textarea {
     display: flex;
     gap: 10px;
     margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links li {
+    display: inline;
+}
+
+.social-links a {
+    color: #80cbc4;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.social-links a:hover {
+    color: #66bb6a; /* Optional: Add a hover effect */
 }
