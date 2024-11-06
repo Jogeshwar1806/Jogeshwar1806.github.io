@@ -1,104 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jogeshwar Mishra's professional portfolio showcasing projects, skills, and experience.">
-    <title>Jogeshwar Mishra's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jogeshwar Mishra's professional portfolio showcasing projects, skills, and experience."
+    />
+    <title>Jogeshwar Mishra | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="./assets/JWM.jpeg" />
+  </head>
+  <body>
     <!-- Navigation -->
     <nav>
-        <h1 class="logo">Jogeshwar Mishra</h1>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+      <h1 class="logo">Jogeshwar Mishra</h1>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
 
     <!-- Homepage Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h2>Welcome to My Portfolio</h2>
-            <p>Hi, I'm Jogeshwar Mishra, a dedicated developer passionate about building innovative solutions.</p>
-            <a href="#portfolio" class="btn">Explore My Work</a>
-        </div>
+      <div class="hero-content">
+        <h2>Welcome to My Portfolio</h2>
+        <p>
+          Hi, I'm Jogeshwar Mishra, a dedicated developer passionate about
+          building innovative solutions.
+        </p>
+        <a href="#portfolio" class="btn">Explore My Work</a>
+      </div>
     </section>
 
     <!-- About Me Section -->
     <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <img src="images/headshot.jpg" alt="Jogeshwar Mishra" class="headshot">
-                <div class="bio">
-                    <p>I’m a BTech student specializing in Electronics and Telecommunication at Trident Academy of Technology, Bhubaneswar. My work focuses on developing robust and user-friendly technology solutions.</p>
-                    <h3>Skills & Experience</h3>
-                    <ul>
-                        <li>HTML, CSS, JavaScript, Node.js</li>
-                        <li>Arduino, Microcontrollers, Wireless Communication</li>
-                        <li>UI/UX Design, Web Development, Project Management</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <img
+            src="./assets/HeadShot.jpg"
+            alt="Jogeshwar Mishra"
+            class="headshot"
+          />
+          <div class="bio">
+            <p class="aboutme">
+              I’m a BTech student specializing in Electronics and
+              Telecommunication at Trident Academy of Technology, Bhubaneswar.
+              My work focuses on developing robust and user-friendly technology
+              solutions.
+            </p>
+            <h3 class="aboutme-h3">Skills & Experience</h3>
+            <ul class="aboutme-ul">
+              <li>HTML, CSS, JavaScript, Node.js</li>
+              <li>Arduino, Microcontrollers, Wireless Communication</li>
+              <li>UI/UX Design, Web Development, Project Management</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio">
-        <div class="container">
-            <h2>Portfolio</h2>
-            <div class="grid">
-                <div class="project">
-                    <img src="images/water_quality_robot.jpg" alt="Water Quality Measurement Robot">
-                    <h4>Water Quality Measurement Robot</h4>
-                    <p>A floating robotic device for measuring water quality parameters like pH, dissolved oxygen, temperature, and turbidity. Designed for aquaculture and environmental monitoring.</p>
-                </div>
-                <div class="project">
-                    <img src="images/meramann.jpg" alt="MeraMann Social Media">
-                    <h4>MeraMann Social Media Platform</h4>
-                    <p>A social media platform built with Node.js and Express, allowing users to share thoughts and explore content.</p>
-                </div>
-                <div class="project">
-                    <img src="images/wonderlust.jpg" alt="Wonderlust Travel Planner">
-                    <h4>Wonderlust Travel Planner</h4>
-                    <p>A travel planning web application for seamless trip management, offering itinerary management and destination exploration.</p>
-                </div>
-                <div class="project">
-                    <img src="images/solar_system.jpg" alt="Hybrid Solar System">
-                    <h4>Hybrid Off-Grid and On-Grid Solar System</h4>
-                    <p>An energy system that combines off-grid and on-grid solar power with a control switch for optimizing energy usage.</p>
-                </div>
-                <!-- Add more projects as needed -->
-            </div>
+      <div class="container">
+        <h2>Portfolio</h2>
+        <div class="grid">
+          <div class="project">
+            <img
+              src="./assets/water_quality_robot.jpeg"
+              alt="Water Quality Measurement Robot"
+            />
+            <h4>Water Quality Measurement Robot</h4>
+            <p>
+              A floating robotic device for measuring water quality parameters
+              like pH, dissolved oxygen, temperature, and turbidity. Designed
+              for aquaculture and environmental monitoring.
+            </p>
+          </div>
+          <div class="project">
+            <img src="./assets/meramann.jpeg" alt="MeraMann Social Media" />
+            <h4>MeraMann Social Media Platform</h4>
+            <p>
+              A social media platform built with Node.js and Express, allowing
+              users to share thoughts and explore content.
+            </p>
+          </div>
+          <div class="project">
+            <img
+              src="./assets/wanderlust.jpeg"
+              alt="Wonderlust Travel Planner"
+            />
+            <h4>Wonderlust Travel Planner</h4>
+            <p>
+              A travel planning web application for seamless trip management,
+              offering itinerary management and destination exploration.
+            </p>
+          </div>
+          <div class="project">
+            <img src="./assets/solar_system.jpeg" alt="Hybrid Solar System" />
+            <h4>Hybrid Off-Grid and On-Grid Solar System</h4>
+            <p>
+              An energy system that combines off-grid and on-grid solar power
+              with a control switch for optimizing energy usage.
+            </p>
+          </div>
+          <!-- Add more projects as needed -->
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <div class="social-links">
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-                <a href="https://github.com" target="_blank">GitHub</a>
-            </div>
-        </div>
+      <div class="container">
+        <h2>Contact</h2>
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
     </section>
 
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2024 Jogeshwar Mishra. All Rights Reserved.</p>
+        <ul class="social-links">
+          <li><a href="https://www.linkedin.com/in/jogeshwar1806/" target="_blank"
+            >LinkedIn</a</li>
+          <li><a href="https://github.com/Jogeshwar1806" target="_blank">GitHub</a></li>
+          <li><a href="mailto:jogeshwarmishra2003@gmail.com">Email</a></li>
+          <li><a href="tel:+917978253881">+91-797-825-3881</a></li>
+        </ul>
+      </div>
+    </footer>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
