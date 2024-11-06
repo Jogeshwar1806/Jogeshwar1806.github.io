@@ -87,6 +87,15 @@ nav {
     justify-content: center;
 }
 
+.p{
+    margin: 1rem;
+}
+
+.hero .a{
+    color: #80cbc4;
+    text-decoration: solid underline #80cbc4;
+}
+
 .hero-content {
     text-align: center;
 }
