@@ -236,3 +236,12 @@ footer {
 .social-links a:hover {
     color: #66bb6a; /* Optional: Add a hover effect */
 }
+
+.project-link{
+    color: rgb(33, 104, 180);
+    text-decoration: none;
+}
+
+.project-link:hover{
+    color: white;
+}
