@@ -139,7 +139,7 @@ nav {
     padding: 50px 20px;
 }
 
-#about {
+#about,#experience {
     background-color: #1e1e1e;
     padding: 50px 0;
 }
@@ -244,4 +244,13 @@ footer {
 
 .project-link:hover{
     color: white;
+}
+
+.a{
+    color: #66bb6a;
+    text-decoration: none;
+}
+
+.a:hover{
+    color: #68a7f5;
 }
