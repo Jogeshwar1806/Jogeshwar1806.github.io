@@ -1,204 +1,1110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Jogeshwar Mishra's professional portfolio showcasing projects, skills, and experience."
-    />
-    <title>Jogeshwar Mishra | Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="./assets/JWM.jpeg" />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav>
-      <h1 class="logo">Jogeshwar Mishra</h1>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#experience">Experience</a></li>
-      </ul>
-      <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
 
-    <!-- Homepage Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h2>Welcome to My Portfolio</h2>
-        <div class="p">
-        <p>
-          Hi, I'm Jogeshwar Mishra, a dedicated developer passionate about
-          building innovative solutions.
-        <!-- </p>
-        <p> -->
-          Click for my Resume <a rel="noopener" class="a" href="https://drive.google.com/file/d/1RScPeUILZv8wyhnkDwGCLwMr7FWBZkbj/view?usp=sharing" target="_blank">Click me!</a>
-        </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogeshwar Mishra | Engineering Portfolio</title>
+    <!-- Modern Fonts & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Color Palette */
+            --background: #020617;
+            --surface: #0a192f;
+            --surface-hover: rgba(10, 25, 47, 0.8);
+            --on-surface: #dce1fb;
+            --on-surface-muted: #8b96a5;
+
+            --primary: #5ffbd6;
+            --primary-dim: #38debb;
+            --on-primary: #002019;
+
+            --purple: #7c3aed;
+            --purple-light: #d2bbff;
+
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --shadow-glass: rgba(100, 255, 218, 0.1);
+
+            /* Typography */
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'Space Grotesk', monospace;
+
+            /* Spacing */
+            --container: 1200px;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2.5rem;
+            --spacing-xl: 4rem;
+        }
+
+        /* Resets */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--on-surface);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Effects */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .orb-1 {
+            top: 25%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background-color: var(--primary);
+        }
+
+        .orb-2 {
+            bottom: 25%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background-color: var(--purple);
+        }
+
+        /* Typography Styles */
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-display);
+            color: #ffffff;
+        }
+
+        .label-caps {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--primary-dim);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, var(--primary-dim));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Layout & Utility */
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .glass-card {
+            background: rgba(10, 25, 47, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glass);
+            border-radius: 0.75rem;
+            padding: var(--spacing-lg);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(56, 222, 187, 0.4);
+            box-shadow: 0 0 30px var(--shadow-glass);
+            transform: translateY(-2px);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 0.5rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--on-primary);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(56, 222, 187, 0.5);
+            transform: scale(1.02);
+        }
+
+        .btn-outline {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(95, 251, 214, 0.1);
+        }
+
+        /* Header / Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5rem;
+            background: rgba(2, 6, 23, 0.7);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-glass);
+            z-index: 50;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--on-surface-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-connect {
+            background-color: var(--primary);
+            color: var(--on-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            transition: transform 0.3s;
+        }
+
+        .nav-connect:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin: 1rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: var(--on-surface);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            color: var(--on-surface-muted);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        /* Profile Section */
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .profile-text {
+            font-size: 1.125rem;
+            color: var(--on-surface);
+        }
+
+        .profile-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .cgpa-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .cgpa-value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .cgpa-label {
+            color: var(--on-surface-muted);
+        }
+
+        .cgpa-divider {
+            width: 3rem;
+            height: 1px;
+            background: var(--border-glass);
+            margin: 1.5rem 0;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-header .material-symbols-outlined {
+            color: var(--primary);
+            font-size: 1.75rem;
+        }
+
+        .skill-header h3 {
+            font-size: 1.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            text-transform: uppercase;
+            border: 1px solid var(--border-glass);
+        }
+
+        .tag.purple {
+            background: rgba(124, 58, 237, 0.15);
+            color: var(--purple-light);
+            border-color: rgba(124, 58, 237, 0.3);
+        }
+
+        .tag.cyan {
+            background: rgba(56, 222, 187, 0.15);
+            color: var(--primary);
+            border-color: rgba(56, 222, 187, 0.3);
+        }
+
+        .tag.gray {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--on-surface);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--primary), var(--purple), transparent);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            background: var(--purple);
+            box-shadow: 0 0 15px var(--purple);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            margin: 0.5rem 0 0.25rem;
+        }
+
+        .timeline-content .company {
+            color: var(--on-surface-muted);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p,
+        .timeline-content li {
+            color: var(--on-surface-muted);
+            font-size: 0.95rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .timeline-content ul li::before {
+            content: "•";
+            color: var(--primary);
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid var(--border-glass);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: rgba(56, 222, 187, 0.4);
+            box-shadow: 0 0 30px var(--shadow-glass);
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            height: 260px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.08);
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, var(--background), transparent);
+        }
+
+        .project-info {
+            padding: var(--spacing-lg);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.5rem;
+        }
+
+        .project-header .icon {
+            color: var(--primary);
+        }
+
+        .project-info p {
+            color: var(--on-surface-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Vision Section */
+        .vision-section {
+            text-align: center;
+            position: relative;
+            padding: 8rem 0;
+        }
+
+        .vision-text {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 1.5rem 0 3rem;
+        }
+
+        .vision-line {
+            width: 90px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info p.lead {
+            color: var(--on-surface-muted);
+            font-size: 1.125rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .icon-box {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 25, 47, 0.4);
+            border: 1px solid var(--border-glass);
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--on-surface-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            background: rgba(2, 6, 23, 0.4);
+            border: 1px solid var(--border-glass);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn-full {
+            width: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-glass);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.125rem;
+            color: #fff;
+        }
+
+        .footer-copy {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--on-surface-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-links a {
+            color: var(--on-surface-muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vision-text {
+                font-size: 2.5rem;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-dot {
+                left: 0;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                align-items: flex-end;
+            }
+
+            .timeline-content {
+                width: 90%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .footer-links a {
+                margin: 0 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Effects -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">J.MISHRA</a>
+            <nav class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#vision">Vision</a>
+            </nav>
+            <a href="#contact" class="nav-connect">Connect</a>
         </div>
-        <a href="#projects" class="btn">Explore My Work</a>
-      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <span class="label-caps">Electronics & Telecommunication Engineer</span>
+            <h1 class="text-gradient">Jogeshwar Mishra</h1>
+            <h2>Engineering Systems. Building Technology. Creating Impact.</h2>
+            <p> Electronics & Telecommunication Engineer | Project Manager | Future Tech Entrepreneur</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
     </section>
 
-    <!-- About Me Section -->
-    <section id="about">
-      <div class="container">
-        <h2>About Me</h2>
-        <div class="about-content">
-          <img
-            src="./assets/Jogesh.jpg"
-            alt="Jogeshwar Mishra"
-            class="headshot"
-          />
-          <div class="bio">
-            <p class="aboutme">
-              I am Jogeshwar Mishra, a final-year BTech student in Electronics and Telecommunication at Trident Academy of Technology, Bhubaneswar, with a passion for cybersecurity and full-stack development. I have hands-on experience in innovative projects like water quality robots and social media apps, blending technical skills with creativity. I aspire to build a career in technology, constantly learning, exploring, and contributing to impactful solutions.
-            </p>
-            <h3 class="aboutme-h3">Skills & Experience</h3>
-            <ul class="aboutme-ul">
-              <li>HTML, CSS, JavaScript, Node.js</li>
-              <li>Arduino, Microcontrollers, Wireless Communication</li>
-              <li>UI/UX Design, Web Development, Project Management</li>
-            </ul>
-          </div>
+    <!-- Profile Section -->
+    <section id="profile" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="label-caps">01 / Profile</span>
+                <h2>Executive Summary</h2>
+            </div>
+
+            <div class="profile-grid">
+                <div class="glass-card profile-text">
+                    <p>
+                        As a final-year Electronics and Telecommunication Engineering student at <span
+                            class="highlight">Trident Academy</span> with a solid <span class="highlight">8.03
+                            CGPA</span>, I blend technical depth with strategic leadership. My journey has been defined
+                        by bridging the gap between theoretical engineering and real-world impact.
+                    </p>
+                    <p>
+                        Currently serving as a Project Manager and engineer at Surya International, I have honed my
+                        ability to lead complex technical initiatives. My entrepreneurial spirit led to the founding of
+                        <span class="highlight">Aqua Vitae Track Technology</span>, focusing on innovative water safety
+                        systems.
+                    </p>
+                </div>
+
+                <div class="glass-card cgpa-card">
+                    <div class="cgpa-value">8.03</div>
+                    <div class="label-caps cgpa-label">Current CGPA</div>
+
+                    <div class="cgpa-divider"></div>
+
+                    <div class="cgpa-value">3+</div>
+                    <div class="label-caps cgpa-label">Years Engineering Focus</div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="projects">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="grid">
-          <div class="project">
-            <img
-              src="./assets/water_quality_robot.jpeg"
-              alt="Water Quality Measurement Robot"
-            />
-            <h4>Water Quality Measurement Robot</h4>
-            <p>
-              A floating robotic device for measuring water quality parameters
-              like pH, dissolved oxygen, temperature, and turbidity. Designed
-              for aquaculture and environmental monitoring.
-            </p>
-            <a rel="noopener" href="https://github.com/Jogeshwar1806/Water-Quality-Measurement-Floating-Robot" class="project-link" target="_blank">Project Link</a>
-          </div>
+    <!-- Skills Section -->
+    <section id="skills" class="section" style="background-color: rgba(2, 6, 23, 0.5);">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <span class="label-caps">02 / Expertise</span>
+                <h2>Technical Mastery</h2>
+            </div>
 
-          <!-- MeraMann -->
+            <div class="skills-grid">
+                <!-- Engineering -->
+                <div class="glass-card">
+                    <div class="skill-header">
+                        <span class="material-symbols-outlined">memory</span>
+                        <h3>Engineering</h3>
+                    </div>
+                    <div class="tags">
+                        <span class="tag purple">Embedded Systems</span>
+                        <span class="tag purple">IoT</span>
+                        <span class="tag purple">RF Communication</span>
+                        <span class="tag purple">Python</span>
+                        <span class="tag purple">System Design</span>
+                    </div>
+                </div>
 
-          <div class="project">
-            <img src="./assets/meramann.jpeg" alt="MeraMann Social Media" />
-            <h4>MeraMann Social Media Platform</h4>
-            <p>
-              A social media platform built with Node.js and Express, allowing
-              users to share thoughts and explore content.
-            </p>
-            <a rel="noopener" href="https://github.com/Jogeshwar1806/Meramann" class="project-link" target="_blank">Project Link</a>
-          </div>
+                <!-- Developer Tools -->
+                <div class="glass-card">
+                    <div class="skill-header">
+                        <span class="material-symbols-outlined">terminal</span>
+                        <h3>Developer Tools</h3>
+                    </div>
+                    <div class="tags">
+                        <span class="tag gray">Arduino IDE</span>
+                        <span class="tag gray">React</span>
+                        <span class="tag gray">Django</span>
+                        <span class="tag gray">Git</span>
+                        <span class="tag gray">MATLAB</span>
+                    </div>
+                </div>
 
-          <!-- WanderLust -->
-
-          <div class="project">
-            <img
-              src="./assets/wanderlust.jpeg"
-              alt="Wonderlust Travel Planner"
-            />
-            <h4>Wonderlust Travel Planner</h4>
-            <p>
-              A travel planning web application for seamless trip management,
-              offering itinerary management and destination exploration.
-            </p>
-            <a rel="noopener" href="https://github.com/Jogeshwar1806/WanderLust" class="project-link" target="_blank">Project Link</a>
-          </div>
-
-          <!-- Hybrid Solar Project -->
-
-          <div class="project">
-            <img src="./assets/solar_system.jpeg" alt="Hybrid Solar System" />
-            <h4>Hybrid Off-Grid and On-Grid Solar System</h4>
-            <p>
-              An energy system that combines off-grid and on-grid solar power
-              with a control switch for optimizing energy usage.
-            </p>
-            <a rel="noopener" href="https://github.com/Jogeshwar1806/Hybrid-Off-Grid-and-On-Grid-Solar-System" class="project-link" target="_blank">Project Link</a>
-          </div>
-
-          <!-- Calculator  -->
-
-          <div class="project">
-            <img src="./assets/Calculator.png" alt="Hybrid Solar System" />
-            <h4>Modern Calculator</h4>
-            <p>
-              Experience seamless calculations with our modern calculator, featuring intuitive design and advanced functionality. 
-              Switch effortlessly between day and night modes for a comfortable user experience anytime, anywhere.
-            </p>
-            <a rel="noopener" href="https://jogeshwar1806.github.io/Modern-Calculator/" class="project-link" target="_blank">Project Link</a>
-          </div>
-
-          <!-- Fretza App  -->
-          
-          <div class="project">
-            <img src="./assets/Fretza.jpeg" alt="Fretza Food Delevery App" />
-            <h4 class="mb-1">Fretza - The Food Delevery App</h4>
-            <p>
-              A web and mobile application designed to deliver food to rural areas, addressing the high service charges of existing platforms. 
-              With Fretza, villagers can enjoy affordable and convenient food delivery right at their doorstep.
-            </p>
-            <a rel="noopener" href="https://github.com/Jogeshwar1806/Fretza" class="project-link" target="_blank">Project Link</a>
-          </div>
-          <!-- Add more projects as needed -->
+                <!-- Leadership -->
+                <div class="glass-card">
+                    <div class="skill-header">
+                        <span class="material-symbols-outlined">groups</span>
+                        <h3>Leadership</h3>
+                    </div>
+                    <div class="tags">
+                        <span class="tag cyan">Project Management</span>
+                        <span class="tag cyan">Public Speaking</span>
+                        <span class="tag cyan">Strategy</span>
+                        <span class="tag cyan">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience">
-      <div class="container">
-        <h2>Experience</h2>
-        <p class="text-center">I am now an Engineer @<a class="a" href="https://groupsurya.co.in/">Group Surya</a>.</p>
-        <p class="text-center">You can watch my one of the ongoing project "Project Phoenix" @<a class="a" href="https://jogeshwar1806.github.io/Project-Phoenix-2026/">Project Phoenix</a>.</p>
-      </div>
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="label-caps">03 / Journey</span>
+                <h2>Professional Experience</h2>
+            </div>
+
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content glass-card">
+                        <span class="label-caps">2025 - Present</span>
+                        <h3>Engineer & Project Manager</h3>
+                        <p class="company">Suryam International Private Limited</p>
+                        <ul>
+                            <li>Working across the renewable energy sector, including solar and emerging green hydrogen
+                                systems.</li>
+                            <li>Managing cross-functional teams to deliver government-scale infrastructure and
+                                engineering projects.</li>
+                            <li>Contributing to system-level execution, coordination, and technical decision-making.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content glass-card">
+                        <span class="label-caps">2024 - Present</span>
+                        <h3>Founder & Director</h3>
+                        <p class="company">Aqua Vitae Track Technology Private Limited</p>
+                        <ul>
+                            <li>Building a technology-driven startup focused on floating robotic systems for water
+                                monitoring.</li>
+                            <li>Leading end-to-end operations including product development, manufacturing, and
+                                deployment strategy.</li>
+                            <li>Managing business functions such as team building, sales, marketing, and strategic
+                                planning.</li>
+                            <li>Driving innovation at the intersection of environment, robotics, and real-world impact.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content glass-card">
+                        <span class="label-caps">2021 - 2025</span>
+                        <h3>BTech in Electronics & Telecommunication Engineering</h3>
+                        <p class="company">Trident Academy of Technology</p>
+                        <ul>
+                            <li>Completed BTech with strong exposure to core engineering concepts, systems, and
+                                practical applications.</li>
+                            <li>Actively participated in projects, hackathons, and technical events throughout the
+                                academic journey.</li>
+                            <li>Consistently took leadership roles across academic and extracurricular activities.</li>
+                            <li>Served as Chairman of the IETE Student Chapter, leading technical initiatives and
+                                student engagement.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
     </section>
-    
+
+    <!-- Projects Section -->
+    <section id="projects" class="section" style="background-color: rgba(2, 6, 23, 0.5);">
+        <div class="container">
+            <div class="section-header">
+                <span class="label-caps">04 / Innovation</span>
+                <h2>Key Projects</h2>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF1aPFaCa8OZZFB3rTUU3VnW3BveHJpHhl0Q_m1lDtktAQ_cVFPQrlPCQRXaae_pw0kQe8BjsH5zd25VUBw7GNbkJ5YZKhRWjDULMzdnVkXxmtyzxa7mz7qIKTMwjO5gdTLc_uRUFNnUvIV1ycBHtwUDdis9xGfBnW040BlGWXk85pcNQ9NslqgMHqizRRYxNxT6YqcbVcoa7Ps1ExAORk5u5jXaSy_-muc39Sg3Eb_Dlct3Jnbl_R3XdTLhMdRHyLn6RzqmHf-g"
+                            alt="Smart Home">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3>Smart Home Automation</h3>
+                            <span class="material-symbols-outlined icon">house</span>
+                        </div>
+                        <p>An integrated IoT system controlling home ambiance, security, and energy using Arduino and
+                            distributed sensor networks.</p>
+                        <div class="tags">
+                            <span class="tag gray">Arduino</span>
+                            <span class="tag gray">IoT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcgz6Wma3H9wkPFMqTQz1b-YuCRGfLIb9IMQdP7cTq9DyjzS2HdHPXDzrDWMIQWVVbaEE61HFgGDn0hOJxgC5G6D4jX8CqYpU8H8WT7JapZs5P1I6WROxTExGysHf3M91Sqj2VwrlzlyAn-HlV4GX-pXKmvL-gjWgGeXluhMrX2zFHMZ9ehp8-Z3PF0ztK_F4fu9P8qRdfmeR1uu1YmVV1EPMBeJ2NX7yNVAvp7Jc3slmMl1hQkvLgUfeLEMSVbf6vMaVitmvuXw"
+                            alt="Aqua Vitae">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3>Aqua Vitae (Floating Robot)</h3>
+                            <span class="material-symbols-outlined icon">water_drop</span>
+                        </div>
+                        <p>Proprietary floating robotic technology designed for automated water quality monitoring and
+                            hazard tracking.</p>
+                        <div class="tags">
+                            <span class="tag gray">Robotics</span>
+                            <span class="tag gray">C++</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlOvcVTvLrF7950gilXLLs5EZftVep9lqe_We1rg5_8qMhfx8oeN0LKLQnbYPQYV4baXkIFpEIcgddD1oI1h4bVhOkyNvEuYBmWK9v3BgJBBxaoLlDlIL0r6ykR8szq8xW4HZJsQjgYJy-l58zZf4X2oUjmoJyjSFMbisUOLUW7yZrRibVkLUPrhGCxFgIusTXmfei7Q4NR7NqWuTBdA1iT56NJxGOWDH1mKKQL7bzCsVUTa4jEHwaSsmsvuLLncHt4g7TIi2LMw"
+                            alt="RF Wireless">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3>RF Wireless Communication</h3>
+                            <span class="material-symbols-outlined icon">settings_input_antenna</span>
+                        </div>
+                        <p>Designing high-reliability RF links for secure data transmission in industrial environments.
+                        </p>
+                        <div class="tags">
+                            <span class="tag gray">Embedded</span>
+                            <span class="tag gray">RF Logic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRKmqHwGmuTq8eH_U2QwLmyV7XxNtd10P8SUt575fkIMVZ3Sjdw1MawStS2tBMvWPvdhlK6MmD5cBTQ2n_5WZdiEew9bvw7BimowTkaAt-dxDli51h4-DFcIPBQRznFVdcHdKsu3UdR_okbLJhvGVZvSfsIhLG-wwuZ7xJaFlUJX3-4ws2gO68uoQxeBNaufQqThqBGdObIFozlFgcBJZHSDiub6ra1Ba7MSMWTwnZRSDv4LlHNNDLZ40Kqx_huDlurJHwMZ2qGw"
+                            alt="Fretza Concept">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3>Fretza Concept</h3>
+                            <span class="material-symbols-outlined icon">local_shipping</span>
+                        </div>
+                        <p>A logistics platform concept aimed at bridging the gap in rural food delivery and supply
+                            chain optimization.</p>
+                        <div class="tags">
+                            <span class="tag gray">Product Design</span>
+                            <span class="tag gray">Market Strategy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="vision-section">
+        <div class="container">
+            <span class="label-caps">The Mission</span>
+            <h2 class="vision-text text-gradient">
+                "I aim to build impactful engineering solutions that solve real-world problems and drive technological
+                progress."
+            </h2>
+            <div class="vision-line"></div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section id="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <form id="contact-form">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            required
-          ></textarea>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-      </div>
+    <section id="contact" class="section">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <span class="label-caps">05 / Contact</span>
+                <h2>Let's Build the Future</h2>
+                <p class="lead">Currently open for engineering collaborations, project leadership roles, and
+                    entrepreneurial ventures.</p>
+
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined">mail</span>
+                    </div>
+                    <div>
+                        <span class="label-caps" style="margin-bottom: 0;">Email</span>
+                        <p>jogeshwarmishra2003@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined">call</span>
+                    </div>
+                    <div>
+                        <span class="label-caps" style="margin-bottom: 0;">Phone</span>
+                        <p>+91 7978253881</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form glass-card">
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="4"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-full">Send Message</button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-      <div class="footer-content">
-        <p>&copy; 2024 Jogeshwar Mishra. All Rights Reserved.</p>
-        <ul class="social-links">
-          <li><a rel="noopener" href="https://www.linkedin.com/in/jogeshwar1806/" target="_blank"
-            >LinkedIn</a</li>
-          <li><a rel="noopener" href="https://github.com/Jogeshwar1806" target="_blank">GitHub</a></li>
-          <li><a rel="noopener" href="mailto:jogeshwarmishra2003@gmail.com" target="_blank">Email</a></li>
-          <li><a rel="noopener" href="tel:+917978253881" target="_blank">+91-797-825-3881</a></li>
-        </ul>
-      </div>
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">J.MISHRA</div>
+            <div class="footer-copy">© 2024 Jogeshwar Mishra. Engineered for the Future.</div>
+            <div class="footer-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
